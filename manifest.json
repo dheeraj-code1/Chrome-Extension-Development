@@ -1,0 +1,36 @@
+{
+  "manifest_version":3,
+  "name":"My new extension",
+  "version":"0.0.1",
+  "description": "A basic example extension with only required keys blbaaaaa",
+  "icons": {
+    "48": "images.png",
+    "128": "images.png"
+  },
+  "action": {
+    "default_icon": {              
+      "16": "images.png",   
+      "24": "images.png",   
+      "32": "images.png"    
+    },
+    "default_title": "Click Me",
+    "default_popup":"popup.html"
+  },
+  "options_page": "option.html",
+  "background":{
+    "service_worker":"background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["contentScript.js"]
+    }
+  ]
+  
+}
